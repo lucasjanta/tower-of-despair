@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bokcxsg6tp7rp"
+path="res://.godot/imported/MiniLumberjack.aseprite-b7efc4a40f4a57d423e7793003691435.res"
+
+[deps]
+
+source_file="res://assets/actors/MiniLumberjack.aseprite"
+dest_files=["res://.godot/imported/MiniLumberjack.aseprite-b7efc4a40f4a57d423e7793003691435.res"]
+
+[params]
+

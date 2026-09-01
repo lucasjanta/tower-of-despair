@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bhvthad5g6kmw"
+path="res://.godot/imported/MiniDeer1.aseprite-35f1d6e75421a9b5903e4bd6bdc27021.res"
+
+[deps]
+
+source_file="res://assets/actors/MiniDeer1.aseprite"
+dest_files=["res://.godot/imported/MiniDeer1.aseprite-35f1d6e75421a9b5903e4bd6bdc27021.res"]
+
+[params]
+

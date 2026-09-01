@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://ctgx0qjo3nu3u"]
+
+[node name="TowerProgression" type="Node2D" unique_id=1904493893]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1916521621]

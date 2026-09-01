@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://d26a4y1u3yxnw"
+path="res://.godot/imported/MiniCrossBowMan.aseprite-fbe452a272ad5ccd1756cd8fe6577bd5.res"
+
+[deps]
+
+source_file="res://assets/actors/MiniCrossBowMan.aseprite"
+dest_files=["res://.godot/imported/MiniCrossBowMan.aseprite-fbe452a272ad5ccd1756cd8fe6577bd5.res"]
+
+[params]
+

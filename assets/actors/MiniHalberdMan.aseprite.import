@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://d0q3krug8ptb6"
+path="res://.godot/imported/MiniHalberdMan.aseprite-5343e471a57540f9ae941b3277e42349.res"
+
+[deps]
+
+source_file="res://assets/actors/MiniHalberdMan.aseprite"
+dest_files=["res://.godot/imported/MiniHalberdMan.aseprite-5343e471a57540f9ae941b3277e42349.res"]
+
+[params]
+

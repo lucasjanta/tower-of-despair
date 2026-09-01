@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://j6p6oqwfbvvt"
+path="res://.godot/imported/MiniHunter.aseprite-4a3295f5fac88fd3e1df33265f504d96.res"
+
+[deps]
+
+source_file="res://assets/actors/MiniHunter.aseprite"
+dest_files=["res://.godot/imported/MiniHunter.aseprite-4a3295f5fac88fd3e1df33265f504d96.res"]
+
+[params]
+

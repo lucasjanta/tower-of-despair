@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://rpgykarok45d"
+path="res://.godot/imported/MiniDeer2.aseprite-5488fb69356fbc275ae005a7ae4a6ef6.res"
+
+[deps]
+
+source_file="res://assets/actors/MiniDeer2.aseprite"
+dest_files=["res://.godot/imported/MiniDeer2.aseprite-5488fb69356fbc275ae005a7ae4a6ef6.res"]
+
+[params]
+

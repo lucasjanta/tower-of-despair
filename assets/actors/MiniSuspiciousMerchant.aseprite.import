@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://oj7eob4a4o14"
+path="res://.godot/imported/MiniSuspiciousMerchant.aseprite-d6ced32ed8f2489b74d972bf0823951a.res"
+
+[deps]
+
+source_file="res://assets/actors/MiniSuspiciousMerchant.aseprite"
+dest_files=["res://.godot/imported/MiniSuspiciousMerchant.aseprite-d6ced32ed8f2489b74d972bf0823951a.res"]
+
+[params]
+

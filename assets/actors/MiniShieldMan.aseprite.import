@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dmaal8kityqk5"
+path="res://.godot/imported/MiniShieldMan.aseprite-18e9bc6fa22fe485839cc1fb8614f9fd.res"
+
+[deps]
+
+source_file="res://assets/actors/MiniShieldMan.aseprite"
+dest_files=["res://.godot/imported/MiniShieldMan.aseprite-18e9bc6fa22fe485839cc1fb8614f9fd.res"]
+
+[params]
+

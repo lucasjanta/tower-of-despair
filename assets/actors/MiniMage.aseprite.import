@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cyi5vbi3gsfn0"
+path="res://.godot/imported/MiniMage.aseprite-8d14f47d8ac1eb61f17ace4a79ff2734.res"
+
+[deps]
+
+source_file="res://assets/actors/MiniMage.aseprite"
+dest_files=["res://.godot/imported/MiniMage.aseprite-8d14f47d8ac1eb61f17ace4a79ff2734.res"]
+
+[params]
+

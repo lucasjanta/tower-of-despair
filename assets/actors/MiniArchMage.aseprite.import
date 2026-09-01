@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cverj0kitmr74"
+path="res://.godot/imported/MiniArchMage.aseprite-43025e129508b3d95b19ca240479d5cd.res"
+
+[deps]
+
+source_file="res://assets/actors/MiniArchMage.aseprite"
+dest_files=["res://.godot/imported/MiniArchMage.aseprite-43025e129508b3d95b19ca240479d5cd.res"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bw0soqm5i1p4c"
+path="res://.godot/imported/MiniBunny.aseprite-786c078f3cdeb96c6ee98c5ce2e1740c.res"
+
+[deps]
+
+source_file="res://assets/actors/MiniBunny.aseprite"
+dest_files=["res://.godot/imported/MiniBunny.aseprite-786c078f3cdeb96c6ee98c5ce2e1740c.res"]
+
+[params]
+

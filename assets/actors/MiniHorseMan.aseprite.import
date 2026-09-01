@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b7q1f3kmsd62g"
+path="res://.godot/imported/MiniHorseMan.aseprite-16b627477448856d3d28f448f82aa409.res"
+
+[deps]
+
+source_file="res://assets/actors/MiniHorseMan.aseprite"
+dest_files=["res://.godot/imported/MiniHorseMan.aseprite-16b627477448856d3d28f448f82aa409.res"]
+
+[params]
+

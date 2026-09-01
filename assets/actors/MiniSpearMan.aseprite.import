@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bcxn4fyhyq1vt"
+path="res://.godot/imported/MiniSpearMan.aseprite-76048d006fb6a4596ff25542bd804244.res"
+
+[deps]
+
+source_file="res://assets/actors/MiniSpearMan.aseprite"
+dest_files=["res://.godot/imported/MiniSpearMan.aseprite-76048d006fb6a4596ff25542bd804244.res"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://o4ruxw3kg1ei"
+path="res://.godot/imported/MiniCavalierMan.aseprite-6d6aae34fdfd1948bfbe069d2f9b0f08.res"
+
+[deps]
+
+source_file="res://assets/actors/MiniCavalierMan.aseprite"
+dest_files=["res://.godot/imported/MiniCavalierMan.aseprite-6d6aae34fdfd1948bfbe069d2f9b0f08.res"]
+
+[params]
+

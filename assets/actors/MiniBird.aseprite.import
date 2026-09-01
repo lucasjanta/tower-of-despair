@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dbauoq3a1x0ng"
+path="res://.godot/imported/MiniBird.aseprite-7b45025e013e0128eba0d5896516bab1.res"
+
+[deps]
+
+source_file="res://assets/actors/MiniBird.aseprite"
+dest_files=["res://.godot/imported/MiniBird.aseprite-7b45025e013e0128eba0d5896516bab1.res"]
+
+[params]
+

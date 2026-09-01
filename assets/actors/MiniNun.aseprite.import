@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dlihngmfvbcoq"
+path="res://.godot/imported/MiniNun.aseprite-2d1376f2cf57947cfa884d3082ca8550.res"
+
+[deps]
+
+source_file="res://assets/actors/MiniNun.aseprite"
+dest_files=["res://.godot/imported/MiniNun.aseprite-2d1376f2cf57947cfa884d3082ca8550.res"]
+
+[params]
+

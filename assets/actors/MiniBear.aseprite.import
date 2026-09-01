@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dlkjd7amc1aua"
+path="res://.godot/imported/MiniBear.aseprite-df51608f2fd83e7cd8bda4100dcb8a2c.res"
+
+[deps]
+
+source_file="res://assets/actors/MiniBear.aseprite"
+dest_files=["res://.godot/imported/MiniBear.aseprite-df51608f2fd83e7cd8bda4100dcb8a2c.res"]
+
+[params]
+

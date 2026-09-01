@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://pdgn4v6qegpy"
+path="res://.godot/imported/MiniArcher.aseprite-909f95feae19edc0577b0d1551b4b437.res"
+
+[deps]
+
+source_file="res://assets/actors/MiniArcher.aseprite"
+dest_files=["res://.godot/imported/MiniArcher.aseprite-909f95feae19edc0577b0d1551b4b437.res"]
+
+[params]
+
