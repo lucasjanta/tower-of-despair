@@ -22,7 +22,28 @@ Here I'll document the process of building the game, including new mechanics, te
 
 ## 📅 Devlog
 
-### [01] — [Development Title]
+### [01] — Project Idea
+
+24/08/2026
+
+#### 🎯 Goal
+
+Create a solid idea with a clear vision for the game design.
+
+#### 🔨 What I Did
+
+I've created a basic GDD, a design for the combat screen on Figma and added a scene manager to the game.
+
+<img width="320" height="180" alt="combatdesign" src="https://github.com/user-attachments/assets/e877dad2-fed0-48b9-9915-1bebb3910c30" />
+
+
+#### 🧠 Technical Decisions
+
+The scene manager will control all scene changes and allows me to keep scenes on memory, paused or running and change UI separated from 2d scenes.
+
+---
+
+### [02] — Ignore this (Template)
 
 **[Date]**
 
@@ -56,6 +77,7 @@ Here I'll document the process of building the game, including new mechanics, te
 
 ---
 
+
 # ⚙️ Technical Notes
 
 This section contains information that is useful across multiple development entries.
@@ -64,7 +86,7 @@ This section contains information that is useful across multiple development ent
 
 * **Engine:** Godot 4.7
 * **Language:** GDScript
-* **Art:** Aseprite
+* **Art:** Aseprite, Figma
 * **Audio:** ---
 * **Version Control:** Git / GitHub
 
