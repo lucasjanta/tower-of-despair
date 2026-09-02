@@ -1,4 +1,5 @@
 extends Node
+class_name StateMachine
 #Variables to deal with states
 @export var initial_state_path: NodePath
 var current_state : State

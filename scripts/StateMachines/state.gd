@@ -3,7 +3,7 @@ class_name State
 
 # Set the base variables
 var player : Player
-var state_machine
+var state_machine : StateMachine
 
 # Set the base functions for the states
 func enter(): pass

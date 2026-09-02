@@ -5,6 +5,12 @@
 [ext_resource type="Script" uid="uid://d1pofkimct3yt" path="res://scripts/StateMachines/player_states/idle_state.gd" id="3_7wueq"]
 [ext_resource type="Script" uid="uid://b1pqaqk28i2u0" path="res://scripts/StateMachines/player_states/walk_state.gd" id="4_oomub"]
 [ext_resource type="Script" uid="uid://dsfrati32vqxo" path="res://scripts/StateMachines/player_states/jump_state.gd" id="5_oomub"]
+[ext_resource type="Script" uid="uid://dxmooc06w1cnf" path="res://scripts/StateMachines/player_states/attack_state.gd" id="6_wl55n"]
+[ext_resource type="Script" uid="uid://dbqa5ylui4u1b" path="res://scripts/StateMachines/player_states/damage_state.gd" id="7_kggx2"]
+[ext_resource type="Script" uid="uid://dbqu02r081sr7" path="res://scripts/StateMachines/player_states/death_state.gd" id="8_c4rn8"]
+[ext_resource type="Script" uid="uid://cqf1x4p4bv3tg" path="res://scripts/StateMachines/player_states/dash_state.gd" id="9_ypltb"]
+[ext_resource type="Script" uid="uid://b2gm83ioskabq" path="res://scripts/StateMachines/player_states/use_ring_state.gd" id="10_nmlhc"]
+[ext_resource type="FontFile" uid="uid://cnrn1vs8wengo" path="res://assets/fonts/RussoOne-Regular.ttf" id="11_kggx2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_366ld"]
 size = Vector2(10, 12)
@@ -53,6 +59,14 @@ region = Rect2(96, 96, 32, 32)
 atlas = SubResource("PortableCompressedTexture2D_cacbb")
 region = Rect2(128, 96, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwi5y"]
+atlas = SubResource("PortableCompressedTexture2D_cacbb")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18oyn"]
+atlas = SubResource("PortableCompressedTexture2D_cacbb")
+region = Rect2(32, 32, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_kggx2"]
 atlas = SubResource("PortableCompressedTexture2D_cacbb")
 region = Rect2(160, 96, 32, 32)
@@ -77,6 +91,10 @@ region = Rect2(96, 128, 32, 32)
 atlas = SubResource("PortableCompressedTexture2D_cacbb")
 region = Rect2(128, 128, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6a6mx"]
+atlas = SubResource("PortableCompressedTexture2D_cacbb")
+region = Rect2(160, 32, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_dferu"]
 atlas = SubResource("PortableCompressedTexture2D_cacbb")
 region = Rect2(32, 0, 32, 32)
@@ -97,10 +115,6 @@ region = Rect2(96, 32, 32, 32)
 atlas = SubResource("PortableCompressedTexture2D_cacbb")
 region = Rect2(128, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6a6mx"]
-atlas = SubResource("PortableCompressedTexture2D_cacbb")
-region = Rect2(160, 32, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_j3wsw"]
 atlas = SubResource("PortableCompressedTexture2D_cacbb")
 region = Rect2(0, 64, 32, 32)
@@ -117,14 +131,6 @@ region = Rect2(128, 0, 32, 32)
 atlas = SubResource("PortableCompressedTexture2D_cacbb")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bwi5y"]
-atlas = SubResource("PortableCompressedTexture2D_cacbb")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_18oyn"]
-atlas = SubResource("PortableCompressedTexture2D_cacbb")
-region = Rect2(32, 32, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_f6erl"]
 atlas = SubResource("PortableCompressedTexture2D_cacbb")
 region = Rect2(64, 32, 32, 32)
@@ -132,13 +138,13 @@ region = Rect2(64, 32, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_k7i36"]
 animations = [{
 "frames": [{
-"duration": 2.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_15tap")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ru62r")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ktjr4")
 }, {
 "duration": 1.0,
@@ -147,7 +153,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oomub")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_8y416")
 }, {
 "duration": 1.0,
@@ -155,7 +161,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"attack",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 2.0,
@@ -173,6 +179,17 @@ animations = [{
 "loop": 1,
 "name": &"damage",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwi5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18oyn")
+}],
+"loop": 0,
+"name": &"dash",
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 2.0,
@@ -201,6 +218,14 @@ animations = [{
 "speed": 10.0
 }, {
 "frames": [{
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_6a6mx")
+}],
+"loop": 1,
+"name": &"fall",
+"speed": 20.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_15tap")
 }, {
@@ -223,21 +248,23 @@ animations = [{
 }, {
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_afsss")
+}],
+"loop": 0,
+"name": &"jump",
+"speed": 5.0
 }, {
-"duration": 4.0,
-"texture": SubResource("AtlasTexture_6a6mx")
-}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j3wsw")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ds2sr")
 }, {
-"duration": 4.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_15tap")
 }],
-"loop": 1,
-"name": &"jump",
+"loop": 0,
+"name": &"land",
 "speed": 20.0
 }, {
 "frames": [{
@@ -264,17 +291,27 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1574"]
+size = Vector2(10, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ie5d1"]
+size = Vector2(10, 12)
+
 [node name="player" type="CharacterBody2D" unique_id=1345400460]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_ru62r")
+jump_force = -350.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=511015276]
 shape = SubResource("RectangleShape2D_366ld")
+debug_color = Color(0, 0.6, 0.69803923, 0.11764706)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1006332472]
 texture_filter = 1
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_k7i36")
-animation = &"idle"
+animation = &"attack"
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": true,
 "pending_changes": {}
@@ -296,6 +333,7 @@ metadata/_aseprite_wizard_source_file_hash_ = "9b781c5e6212a075fd90a49890812793"
 
 [node name="StateMachine" type="Node" parent="." unique_id=2049848435]
 script = ExtResource("1_15tap")
+initial_state_path = NodePath("IdleState")
 
 [node name="IdleState" type="Node" parent="StateMachine" unique_id=762119329]
 script = ExtResource("3_7wueq")
@@ -307,7 +345,50 @@ script = ExtResource("4_oomub")
 script = ExtResource("5_oomub")
 
 [node name="AttackState" type="Node" parent="StateMachine" unique_id=616091853]
+script = ExtResource("6_wl55n")
 
 [node name="DamageState" type="Node" parent="StateMachine" unique_id=70024777]
+script = ExtResource("7_kggx2")
 
 [node name="DeathState" type="Node" parent="StateMachine" unique_id=734340980]
+script = ExtResource("8_c4rn8")
+
+[node name="DashState" type="Node" parent="StateMachine" unique_id=1316341425]
+script = ExtResource("9_ypltb")
+
+[node name="UseRingState" type="Node" parent="StateMachine" unique_id=246038360]
+script = ExtResource("10_nmlhc")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1101343210]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=105685421]
+position = Vector2(10, 1)
+shape = SubResource("RectangleShape2D_f1574")
+disabled = true
+debug_color = Color(0.9836094, 0, 0.35578406, 0.41960785)
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1360222620]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=287146393]
+shape = SubResource("RectangleShape2D_ie5d1")
+debug_color = Color(0.63067734, 0.5298313, 7.70092e-07, 0.41960785)
+
+[node name="Label" type="Label" parent="." unique_id=1123409178]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -16.5
+offset_top = -29.0
+offset_right = 16.5
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_kggx2")
+theme_override_font_sizes/font_size = 12
+text = "State"
