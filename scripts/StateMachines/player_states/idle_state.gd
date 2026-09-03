@@ -7,16 +7,22 @@ func enter():
 	state_machine = get_parent()
 	update_animation()
 	
+	
 func update_animation():
 	animated_sprite_2d.play("idle")
 
-func physics_update(_delta):
+func physics_update(delta):
 	if player.dir != 0:
 		state_machine.change_state(state_machine.get_node("WalkState"))
 		return
+	else:
+		player.velocity.x = 0
 	if Input.is_action_just_pressed("jump") and player.is_on_floor():
 		state_machine.change_state(state_machine.get_node("JumpState"))
 		return
 	if Input.is_action_just_pressed("attack"):
 		state_machine.change_state(state_machine.get_node("AttackState"))
+		return
+	if Input.is_action_just_pressed("dash"):
+		state_machine.change_state(state_machine.get_node("DashState"))
 		return

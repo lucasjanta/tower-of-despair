@@ -1,5 +1,69 @@
 [gd_scene format=3 uid="uid://ctgx0qjo3nu3u"]
 
-[node name="TowerProgression" type="Node2D" unique_id=1904493893]
+[ext_resource type="Texture2D" uid="uid://b7rjdwb7fvwps" path="res://assets/backgrounds/background 1/1.png" id="1_l3a7k"]
+[ext_resource type="Texture2D" uid="uid://cq3g34w51ulhx" path="res://assets/props/tower.png" id="1_ww6ns"]
+[ext_resource type="Texture2D" uid="uid://c57d1c8u3li1n" path="res://assets/backgrounds/background 1/2.png" id="2_vfvuh"]
+[ext_resource type="Texture2D" uid="uid://dyxaglyllqk8a" path="res://assets/backgrounds/background 1/3.png" id="3_tww3c"]
+[ext_resource type="Texture2D" uid="uid://bkjoinbnet72w" path="res://assets/backgrounds/background 1/4.png" id="4_7d72t"]
+[ext_resource type="Texture2D" uid="uid://b84mc1kbyo1bc" path="res://assets/backgrounds/background 1/5.png" id="6_sjyic"]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1916521621]
+[node name="TowerMenu" type="Node2D" unique_id=1904493893]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=569827128]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=940812721]
+modulate = Color(0.3271189, 1.3235956e-07, 0.18033552, 1)
+scale = Vector2(0.556, 0.556)
+texture = ExtResource("1_l3a7k")
+centered = false
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=934488408]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=714075772]
+modulate = Color(0.53882736, 2.4065375e-07, 0.31237411, 1)
+position = Vector2(95, -8)
+scale = Vector2(0.556, 0.556)
+texture = ExtResource("2_vfvuh")
+centered = false
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=158407804]
+repeat_size = Vector2(320.256, 0)
+autoscroll = Vector2(2, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=1758641519]
+modulate = Color(1, 0.019607844, 0.25490198, 1)
+scale = Vector2(0.556, 0.556)
+texture = ExtResource("3_tww3c")
+centered = false
+
+[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=1489794991]
+repeat_size = Vector2(320.256, 0)
+autoscroll = Vector2(4, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4" unique_id=742418491]
+modulate = Color(1, 0.019607844, 0.25490198, 1)
+scale = Vector2(0.556, 0.556)
+texture = ExtResource("4_7d72t")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1752730006]
+position = Vector2(61, 101.28003)
+scale = Vector2(0.81999975, 0.81999975)
+texture = ExtResource("1_ww6ns")
+region_rect = Rect2(31, 264, 49, 96)
+
+[node name="Parallax2D5" type="Parallax2D" parent="." unique_id=358784040]
+repeat_size = Vector2(320.256, 0)
+autoscroll = Vector2(-8, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D5" unique_id=1177090687]
+modulate = Color(1, 0.019607844, 0.25490198, 1)
+scale = Vector2(0.556, 0.556)
+texture = ExtResource("6_sjyic")
+centered = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1775834842]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+color = Color(0.83, 0.58349, 0.55609995, 1)

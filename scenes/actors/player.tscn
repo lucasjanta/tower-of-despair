@@ -301,7 +301,6 @@ size = Vector2(10, 12)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_ru62r")
-jump_force = -350.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=511015276]
 shape = SubResource("RectangleShape2D_366ld")
@@ -311,7 +310,7 @@ debug_color = Color(0, 0.6, 0.69803923, 0.11764706)
 texture_filter = 1
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_k7i36")
-animation = &"attack"
+animation = &"damage"
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": true,
 "pending_changes": {}
@@ -356,6 +355,10 @@ script = ExtResource("8_c4rn8")
 [node name="DashState" type="Node" parent="StateMachine" unique_id=1316341425]
 script = ExtResource("9_ypltb")
 
+[node name="dash_timer" type="Timer" parent="StateMachine/DashState" unique_id=258567616]
+wait_time = 0.25
+one_shot = true
+
 [node name="UseRingState" type="Node" parent="StateMachine" unique_id=246038360]
 script = ExtResource("10_nmlhc")
 
@@ -392,3 +395,18 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("11_kggx2")
 theme_override_font_sizes/font_size = 12
 text = "State"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1626143715]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=890434419]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[connection signal="timeout" from="StateMachine/DashState/dash_timer" to="StateMachine/DashState" method="_on_dash_timer_timeout"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://83fvw61b8gr0"]
 
 [ext_resource type="Script" uid="uid://cslw34ur4xevx" path="res://scenes/misc/scene_manager.gd" id="1_tr7i7"]
+[ext_resource type="PackedScene" uid="uid://ctgx0qjo3nu3u" path="res://scenes/tower_progression.tscn" id="2_eo28r"]
 [ext_resource type="PackedScene" uid="uid://b4gnolcf8ka8h" path="res://scenes/UI/main_menu.tscn" id="2_s4xp6"]
 
 [node name="scene_manager" type="Node" unique_id=374947445 node_paths=PackedStringArray("world_2D", "gui")]
@@ -9,6 +10,8 @@ world_2D = NodePath("world_2d")
 gui = NodePath("CanvasLayer/UI")
 
 [node name="world_2d" type="Node2D" parent="." unique_id=381257637]
+
+[node name="TowerMenu" parent="world_2d" unique_id=1904493893 instance=ExtResource("2_eo28r")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1503809115]
 

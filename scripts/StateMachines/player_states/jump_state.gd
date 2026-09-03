@@ -16,8 +16,8 @@ func update_animation():
 		animated_sprite_2d.play("jump")
 	if player.velocity.y > 0:
 		animated_sprite_2d.play("fall")
-	if player.is_on_floor():
-		animated_sprite_2d.play("land")
+	#if player.is_on_floor():
+		#animated_sprite_2d.play("land")
 	
 		
 func physics_update(_delta):
@@ -27,4 +27,6 @@ func physics_update(_delta):
 	if player.is_on_floor():
 		state_machine.change_state(state_machine.get_node("IdleState"))
 
-		
+	if Input.is_action_just_pressed("dash"):
+		state_machine.change_state(state_machine.get_node("DashState"))
+		return

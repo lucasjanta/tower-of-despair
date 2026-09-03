@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b4gnolcf8ka8h"]
 
+[ext_resource type="Script" uid="uid://d0xchujemustq" path="res://scripts/UI/main_menu.gd" id="1_5jstl"]
 [ext_resource type="FontFile" uid="uid://n8ddjvj0dwik" path="res://assets/fonts/Evil Empire.otf" id="1_qwnig"]
 [ext_resource type="FontFile" uid="uid://cnrn1vs8wengo" path="res://assets/fonts/RussoOne-Regular.ttf" id="2_yonvy"]
 
@@ -15,6 +16,32 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tfcbk"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jstl"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tfcbk"]
+
 [node name="main_menu" type="Control" unique_id=1501845830]
 layout_mode = 3
 anchors_preset = 15
@@ -22,6 +49,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5jstl")
 
 [node name="Label" type="Label" parent="." unique_id=1869405670]
 layout_mode = 1
@@ -30,10 +58,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -53.5
-offset_top = -43.0
-offset_right = 53.5
-offset_bottom = -25.0
+offset_left = -40.0
+offset_top = -51.0
+offset_right = 133.0
+offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(1, 0, 0, 0.28627452)
@@ -42,7 +70,7 @@ theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 8
 theme_override_constants/shadow_outline_size = 8
 theme_override_fonts/font = ExtResource("1_qwnig")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 26
 text = "Tower of Despair"
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1974477000]
@@ -51,8 +79,10 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -88.0
-offset_bottom = -36.0
+offset_left = 126.0
+offset_top = -110.0
+offset_right = -34.0
+offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 16
@@ -60,30 +90,41 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=734786863]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1473916552]
 layout_mode = 2
 alignment = 1
 
-[node name="NewGameButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1600738847]
+[node name="NewGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1600738847]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_yonvy")
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_yonvy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tfcbk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5jstl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tfcbk")
 text = "New Game"
 
-[node name="OptionsButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1247534026]
+[node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1247534026]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_yonvy")
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_yonvy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tfcbk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5jstl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tfcbk")
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1931833651]
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1931833651]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_yonvy")
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_yonvy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tfcbk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5jstl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tfcbk")
 text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]

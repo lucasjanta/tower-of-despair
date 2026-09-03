@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Tower of Despair"
-run/main_scene="uid://cxgs3psbb3fbp"
+run/main_scene="uid://83fvw61b8gr0"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

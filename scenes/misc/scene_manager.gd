@@ -12,6 +12,7 @@ var scene_cache: Dictionary = {} # Store loaded scenes by path
 func _ready() -> void:
 	Global.scene_manager = self
 	current_gui_scene = $CanvasLayer/UI/main_menu
+	current_2D_scene = $world_2d/TowerMenu
 	
 	if current_gui_scene and current_gui_scene.scene_file_path:
 		scene_cache[current_gui_scene.scene_file_path] = current_gui_scene
