@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://vtnj6q52wqct"]
 
 [ext_resource type="Script" uid="uid://c6jpuc6sg6bc0" path="res://scripts/StateMachines/state_machine.gd" id="1_4itl8"]
+[ext_resource type="Script" uid="uid://bqpb76yos2cib" path="res://scenes/actors/enemy_1.gd" id="1_wqysb"]
 [ext_resource type="Script" uid="uid://dxljxo3vrf7ji" path="res://scripts/StateMachines/enemyStates/idle_state.gd" id="2_2o31s"]
 [ext_resource type="Script" uid="uid://dpu4xhdbnj4bc" path="res://scripts/StateMachines/enemyStates/walk_state.gd" id="3_wqysb"]
 [ext_resource type="Script" uid="uid://diudqxrmtah2e" path="res://scripts/StateMachines/enemyStates/flee_state.gd" id="4_lcwxs"]
@@ -265,6 +266,12 @@ size = Vector2(9, 15)
 size = Vector2(10, 13)
 
 [node name="Enemy1" type="CharacterBody2D" unique_id=5993741]
+script = ExtResource("1_wqysb")
+enemy_name = "Warrior"
+max_hp = 500.0
+def = 10.0
+base_dmg = 10.0
+speed = 125.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1593588687]
 shape = SubResource("RectangleShape2D_6ntl1")

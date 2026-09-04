@@ -10,6 +10,8 @@ func enter():
 	update_animation()
 	dash_timer.start()
 	hurtbox_collision.disabled = true
+	player.dash_used = true
+	player.cd = 0.0
 	if !animated_sprite_2d.flip_h:
 		player.velocity.x = player.dash_speed
 	else:

@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cqf1x4p4bv3tg" path="res://scripts/StateMachines/player_states/dash_state.gd" id="9_ypltb"]
 [ext_resource type="Script" uid="uid://b2gm83ioskabq" path="res://scripts/StateMachines/player_states/use_ring_state.gd" id="10_nmlhc"]
 [ext_resource type="FontFile" uid="uid://cnrn1vs8wengo" path="res://assets/fonts/RussoOne-Regular.ttf" id="11_kggx2"]
+[ext_resource type="Script" uid="uid://b8ak5kcjbji8b" path="res://scripts/UI/player_hud.gd" id="12_c4rn8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_366ld"]
 size = Vector2(10, 12)
@@ -297,6 +298,121 @@ size = Vector2(10, 6)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie5d1"]
 size = Vector2(10, 12)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dferu"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.10880213, 0.0001223243, 0.31084788, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypltb"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmlhc"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 0, 0, 0.68235296)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5w3c"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.94189245, 7.02709e-06, 0.6019888, 0.68235296)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0878f"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.10880213, 0.0001223243, 0.31084788, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kggx2"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 0.39215687)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4rn8"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
 [node name="player" type="CharacterBody2D" unique_id=1345400460]
 collision_layer = 2
 collision_mask = 3
@@ -398,15 +514,130 @@ text = "State"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1626143715]
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=890434419]
+[node name="PlayerHUD" type="Control" parent="CanvasLayer" unique_id=506276041]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("12_c4rn8")
+
+[node name="StatsContainer" type="PanelContainer" parent="CanvasLayer/PlayerHUD" unique_id=1899444796]
+custom_minimum_size = Vector2(64, 34)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -34.0
+offset_right = 64.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dferu")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PlayerHUD/StatsContainer" unique_id=560504127]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/PlayerHUD/StatsContainer/MarginContainer" unique_id=2145754712]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PlayerHUD/StatsContainer/MarginContainer/VBoxContainer2" unique_id=629599855]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/PlayerHUD/StatsContainer/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=2093907132]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_kggx2")
+theme_override_font_sizes/font_size = 6
+text = "HP"
+
+[node name="HpBar" type="ProgressBar" parent="CanvasLayer/PlayerHUD/StatsContainer/MarginContainer/VBoxContainer2/VBoxContainer" unique_id=1866154094]
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ypltb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_nmlhc")
+value = 50.0
+show_percentage = false
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/PlayerHUD/StatsContainer/MarginContainer/VBoxContainer2" unique_id=2012158761]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/PlayerHUD/StatsContainer/MarginContainer/VBoxContainer2/VBoxContainer2" unique_id=1637879196]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_kggx2")
+theme_override_font_sizes/font_size = 6
+text = "Dash"
+
+[node name="DashBar" type="ProgressBar" parent="CanvasLayer/PlayerHUD/StatsContainer/MarginContainer/VBoxContainer2/VBoxContainer2" unique_id=1140898166]
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ypltb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_h5w3c")
+value = 50.0
+show_percentage = false
+
+[node name="RingsContainer" type="PanelContainer" parent="CanvasLayer/PlayerHUD" unique_id=890434419]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
+offset_left = -64.0
+offset_top = -34.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0878f")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PlayerHUD/RingsContainer" unique_id=1388513772]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PlayerHUD/RingsContainer/MarginContainer" unique_id=1125144396]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/PlayerHUD/RingsContainer/MarginContainer/HBoxContainer" unique_id=1383872330]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PlayerHUD/RingsContainer/MarginContainer/HBoxContainer/PanelContainer" unique_id=651380392]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/PlayerHUD/RingsContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer" unique_id=1529158807]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("11_kggx2")
+theme_override_font_sizes/font_size = 4
+text = "Ring One"
+horizontal_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/PlayerHUD/RingsContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer" unique_id=343190874]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/background = SubResource("StyleBoxFlat_kggx2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_c4rn8")
+value = 40.0
+show_percentage = false
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PlayerHUD/RingsContainer/MarginContainer/HBoxContainer/PanelContainer" unique_id=1908469957]
+layout_mode = 2
+expand_mode = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer/PlayerHUD/RingsContainer/MarginContainer/HBoxContainer" unique_id=1026370010]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
 
 [connection signal="timeout" from="StateMachine/DashState/dash_timer" to="StateMachine/DashState" method="_on_dash_timer_timeout"]

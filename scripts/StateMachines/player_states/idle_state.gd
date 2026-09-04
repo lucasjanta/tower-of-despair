@@ -23,6 +23,6 @@ func physics_update(delta):
 	if Input.is_action_just_pressed("attack"):
 		state_machine.change_state(state_machine.get_node("AttackState"))
 		return
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed("dash") and !player.dash_used:
 		state_machine.change_state(state_machine.get_node("DashState"))
 		return

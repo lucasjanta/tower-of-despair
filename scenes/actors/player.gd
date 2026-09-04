@@ -12,6 +12,12 @@ var dir : float
 @export var equipped_rings : Array[Ring]
 @export var bag_rings : Array[Ring]
 
+@export var max_hp : float = 100.0
+var hp : float
+var dash_used := false
+var dash_cd := 5.0
+var cd = 5.0
+
 func _physics_process(delta: float) -> void:
 	dir = Input.get_axis("left", "right")
 	
@@ -20,3 +26,9 @@ func _physics_process(delta: float) -> void:
 		
 	move_and_slide()
 	state_label.text = state_machine.current_state.name
+	if dash_used and cd < dash_cd:
+		cd += delta
+	if cd >= dash_cd:
+		dash_used = false
+		cd = dash_cd
+		

@@ -27,6 +27,6 @@ func physics_update(_delta):
 	if player.is_on_floor():
 		state_machine.change_state(state_machine.get_node("IdleState"))
 
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed("dash") and !player.dash_used:
 		state_machine.change_state(state_machine.get_node("DashState"))
 		return
