@@ -2,7 +2,7 @@ extends Node
 class_name State
 
 # Set the base variables
-var player : Player
+var player : CharacterBody2D
 var state_machine : StateMachine
 
 # Set the base functions for the states

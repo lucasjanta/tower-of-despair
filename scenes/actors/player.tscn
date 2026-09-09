@@ -124,6 +124,22 @@ region = Rect2(0, 64, 32, 32)
 atlas = SubResource("PortableCompressedTexture2D_cacbb")
 region = Rect2(32, 64, 32, 32)
 
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_c4rn8"]
+_data = PackedByteArray("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")
+size_override = Vector2(192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7i36"]
+atlas = SubResource("PortableCompressedTexture2D_c4rn8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t81fx"]
+atlas = SubResource("PortableCompressedTexture2D_c4rn8")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10nxg"]
+atlas = SubResource("PortableCompressedTexture2D_c4rn8")
+region = Rect2(0, 160, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_6xqls"]
 atlas = SubResource("PortableCompressedTexture2D_cacbb")
 region = Rect2(128, 0, 32, 32)
@@ -267,6 +283,23 @@ animations = [{
 "loop": 0,
 "name": &"land",
 "speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7i36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t81fx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10nxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10nxg")
+}],
+"loop": 0,
+"name": &"use_ring",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -426,7 +459,7 @@ debug_color = Color(0, 0.6, 0.69803923, 0.11764706)
 texture_filter = 1
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_k7i36")
-animation = &"damage"
+animation = &"use_ring"
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": true,
 "pending_changes": {}
