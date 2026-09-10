@@ -742,9 +742,10 @@ tile_set = SubResource("TileSet_n4wl7")
 [node name="props" type="TileMapLayer" parent="." unique_id=1385577352]
 tile_set = SubResource("TileSet_n4wl7")
 
-[node name="player" parent="." unique_id=1345400460 instance=ExtResource("2_rvrkw")]
-position = Vector2(18, 115)
-
 [node name="Enemy1" parent="." unique_id=5993741 node_paths=PackedStringArray("player_ref") instance=ExtResource("3_yql2u")]
 position = Vector2(287, 131)
 player_ref = NodePath("../player")
+max_hp = 1000.0
+
+[node name="player" parent="." unique_id=1345400460 instance=ExtResource("2_rvrkw")]
+position = Vector2(18, 115)

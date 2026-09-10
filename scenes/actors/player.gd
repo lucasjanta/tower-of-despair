@@ -4,6 +4,8 @@ class_name Player
 var dir : float
 @onready var state_machine: StateMachine = $StateMachine
 @onready var state_label: Label = $Label
+@onready var player_hud: Control = $CanvasLayer/PlayerHUD
+
 
 @export var speed : float = 150.0
 @export var jump_force : float = -250.0
@@ -17,6 +19,11 @@ var hp : float
 var dash_used := false
 var dash_cd := 5.0
 var cd = 5.0
+
+func _ready() -> void:
+	hp = max_hp
+	player_hud.update_hp()
+	
 
 func _physics_process(delta: float) -> void:
 	dir = Input.get_axis("left", "right")
@@ -32,3 +39,8 @@ func _physics_process(delta: float) -> void:
 		dash_used = false
 		cd = dash_cd
 		
+func take_damage(dmg):
+	hp -= dmg
+	player_hud.update_hp()
+	if hp <= 0.0:
+		print("player died")

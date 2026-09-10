@@ -28,7 +28,7 @@ func physics_update(delta):
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite_2d.animation == "attack":
-		if player.special_attack_cd <= 0.0:
+		if player.special_attack_cd <= 0.0 and player.distance_to_player < 15.0:
 			state_machine.change_state(state_machine.get_node("SpecialAttackState"))
 			return
 		elif player.ring_cd <= 0.0 and player.distance_to_player <= 200.0:

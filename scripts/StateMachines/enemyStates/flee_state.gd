@@ -22,11 +22,11 @@ func physics_update(delta):
 	if flee_timer <= 0.0 or player.distance_to_player > 60.0:
 		state_machine.change_state(state_machine.get_node("IdleState"))
 		return
-	
+
 	if player.ring_cd <= 0.0 and player.distance_to_player <= 200.0:
 		state_machine.change_state(state_machine.get_node("UseRingState"))
 		return
-	
+
 	if flee_timer > 0.0:
 		flee_timer -= delta
 	else:

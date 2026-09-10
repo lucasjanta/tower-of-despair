@@ -21,7 +21,7 @@ func physics_update(delta):
 	if idle_cd > 0.0:
 		idle_cd -= delta
 	else:
-		if player.distance_to_player < 30.0:
+		if player.distance_to_player < 15.0:
 			if player.special_attack_cd <= 0.0:
 				state_machine.change_state(state_machine.get_node("SpecialAttackState"))
 				return
@@ -33,7 +33,7 @@ func physics_update(delta):
 			state_machine.change_state(state_machine.get_node("UseRingState"))
 			return
 		
-		if player.distance_to_player >= 30.0:
+		if player.distance_to_player >= 15.0:
 			state_machine.change_state(state_machine.get_node("FollowState"))
 			return
 		else:

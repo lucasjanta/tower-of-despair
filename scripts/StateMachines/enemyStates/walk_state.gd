@@ -17,7 +17,7 @@ func update_animation():
 
 func physics_update(delta):
 	update_animation()
-	if player.distance_to_player < 30.0:
+	if player.distance_to_player < 15.0:
 		if player.special_attack_cd <= 0.0:
 			state_machine.change_state(state_machine.get_node("SpecialAttackState"))
 			return

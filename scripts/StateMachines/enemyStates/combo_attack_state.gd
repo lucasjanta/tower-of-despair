@@ -16,7 +16,7 @@ func enter():
 	
 func update_animation():
 	animated_sprite_2d.play("special_attack")
-	special_slash.visible = true
+	
 	
 	if player.player_ref.global_position.x < player.global_position.x:
 		animated_sprite_2d.flip_h = true
@@ -40,6 +40,7 @@ func physics_update(delta):
 	if animated_sprite_2d.frame == 5:
 		hitbox_collision.disabled = true
 		special_slash.play("slash_diagonal")
+		special_slash.visible = true
 	
 	if special_slash.frame == 3:
 		hitbox_special_attack_collision.disabled = false
@@ -55,7 +56,7 @@ func exit():
 
 
 func _on_special_slash_animation_finished() -> void:
-	if player.basic_attack_cd <= 0.0:
+	if player.basic_attack_cd <= 0.0 and player.distance_to_player < 15.0:
 		state_machine.change_state(state_machine.get_node("BasicAttackState"))
 		return
 	elif player.ring_cd <= 0.0 and player.distance_to_player <= 200.0:

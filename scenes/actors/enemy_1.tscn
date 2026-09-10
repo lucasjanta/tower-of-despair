@@ -429,7 +429,56 @@ animations = [{
 "speed": 16.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qlemf"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+shadow_color = Color(0, 0, 0, 0.21960784)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psr2m"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 0.45490196)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uta2t"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 0, 0, 0.7372549)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
 [node name="Enemy1" type="CharacterBody2D" unique_id=5993741]
+collision_layer = 0
 script = ExtResource("1_wqysb")
 enemy_name = "Warrior"
 max_hp = 500.0
@@ -512,12 +561,11 @@ script = ExtResource("8_mafn4")
 libraries/ = SubResource("AnimationLibrary_mafn4")
 
 [node name="special_slash" type="AnimatedSprite2D" parent="." unique_id=1287461402]
+visible = false
 position = Vector2(10, -13)
 scale = Vector2(0.5625, 0.5625)
 sprite_frames = SubResource("SpriteFrames_c6q54")
 animation = &"slash_diagonal"
-frame = 9
-frame_progress = 1.0
 flip_h = true
 
 [node name="StateLabel" type="Label" parent="." unique_id=1054459087]
@@ -535,6 +583,44 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("10_psr2m")
 theme_override_font_sizes/font_size = 8
 text = "CurrentState"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1840359483]
+
+[node name="StatsBar" type="PanelContainer" parent="CanvasLayer" unique_id=850879870]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.0
+offset_right = 71.0
+offset_bottom = 37.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qlemf")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/StatsBar" unique_id=40741330]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/StatsBar/MarginContainer" unique_id=1507501936]
+layout_mode = 2
+
+[node name="Enemyname" type="Label" parent="CanvasLayer/StatsBar/MarginContainer/VBoxContainer" unique_id=1630741261]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("10_psr2m")
+theme_override_font_sizes/font_size = 6
+text = "Enemy Name"
+horizontal_alignment = 1
+
+[node name="EnemyHpBar" type="ProgressBar" parent="CanvasLayer/StatsBar/MarginContainer/VBoxContainer" unique_id=1517114890]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_psr2m")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uta2t")
+value = 50.1
+show_percentage = false
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/UseRingState" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/BasicAttackState" method="_on_animated_sprite_2d_animation_finished"]
