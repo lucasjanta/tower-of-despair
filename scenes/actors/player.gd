@@ -8,6 +8,11 @@ var dir : float
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hit_label: Label = $HitLabel
+@onready var inv_anim: AnimationPlayer = $CanvasLayer/RingBag/InvAnim
+
+
+@onready var ring_bag: PanelContainer = $CanvasLayer/RingBag
+
 
 
 @export var speed : float = 150.0
@@ -16,9 +21,12 @@ var dir : float
 @export var dash_speed : float = 300.0
 
 @export var equipped_rings : Array[Ring] = []
-@export var bag_rings : Array[Ring]
+@export var ring_inventory : Array[Ring]
 
 @export var max_hp : float = 100.0
+@export var base_dmg : float = 10.0
+
+var final_dmg : float = 10.0
 var hp : float
 var dash_used := false
 var dash_cd := 5.0
@@ -42,6 +50,8 @@ func _physics_process(delta: float) -> void:
 	if cd >= dash_cd:
 		dash_used = false
 		cd = dash_cd
+		
+	
 		
 func take_damage(dmg):
 	hp -= dmg
@@ -79,3 +89,8 @@ func use_ring(index: int) -> void:
 
 	ring.use(self)
 	ring.consume_use()
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body is Enemy:
+		body.take_damage(final_dmg)

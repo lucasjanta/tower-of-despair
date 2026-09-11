@@ -5,6 +5,8 @@ extends Enemy
 @export var player_ref : Player
 @onready var enemyname: Label = $CanvasLayer/StatsBar/MarginContainer/VBoxContainer/Enemyname
 @onready var enemy_hp_bar: ProgressBar = $CanvasLayer/StatsBar/MarginContainer/VBoxContainer/EnemyHpBar
+@onready var hit_anim: AnimationPlayer = $HitAnim
+@onready var hit_label: Label = $HitLabel
 
 
 var hp : float
@@ -51,6 +53,8 @@ func update_hp():
 
 func take_damage(dmg):
 	hp -= dmg
+	hit_label.text = str(dmg)
+	hit_anim.play("take_dmg")
 	update_hp()
 	if hp <= 0.0:
 		print("enemy died")

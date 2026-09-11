@@ -477,8 +477,95 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 corner_detail = 6
 
+[sub_resource type="Animation" id="Animation_ypltb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HitLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitLabel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2.5, -9)]
+}
+
+[sub_resource type="Animation" id="Animation_c4rn8"]
+resource_name = "take_dmg"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HitLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitLabel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-2.5, -9), Vector2(-2.5, -13), Vector2(-2.5, -13), Vector2(-2.5, -16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_psr2m"]
+_data = {
+&"RESET": SubResource("Animation_ypltb"),
+&"take_dmg": SubResource("Animation_c4rn8")
+}
+
 [node name="Enemy1" type="CharacterBody2D" unique_id=5993741]
-collision_layer = 0
+collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_wqysb")
 enemy_name = "Warrior"
 max_hp = 500.0
@@ -625,6 +712,28 @@ theme_override_styles/background = SubResource("StyleBoxFlat_psr2m")
 theme_override_styles/fill = SubResource("StyleBoxFlat_uta2t")
 value = 50.1
 show_percentage = false
+
+[node name="HitAnim" type="AnimationPlayer" parent="." unique_id=1640229755]
+libraries/ = SubResource("AnimationLibrary_psr2m")
+
+[node name="HitLabel" type="Label" parent="." unique_id=2005814925]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2.5
+offset_top = -9.0
+offset_right = 2.5
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("10_psr2m")
+theme_override_font_sizes/font_size = 4
+text = "10"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/UseRingState" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/BasicAttackState" method="_on_animated_sprite_2d_animation_finished"]
