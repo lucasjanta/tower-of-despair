@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://o028ktbdtgvh"]
+
+[ext_resource type="FontFile" uid="uid://cnrn1vs8wengo" path="res://assets/fonts/RussoOne-Regular.ttf" id="1_d56e8"]
+[ext_resource type="Script" uid="uid://bo0h0xim18it5" path="res://scripts/UI/ring_bag_slot.gd" id="1_lda41"]
+
+[node name="RingBagSlot" type="PanelContainer" unique_id=1518311473]
+custom_minimum_size = Vector2(25, 25)
+script = ExtResource("1_lda41")
+
+[node name="Ring" type="MarginContainer" parent="." unique_id=2137945752]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="RingImage" type="TextureRect" parent="Ring" unique_id=320271053]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Ring" unique_id=328756398]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="RingNameLabel" type="Label" parent="Ring/VBoxContainer" unique_id=421903263]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d56e8")
+theme_override_font_sizes/font_size = 2
+text = "Ring X"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Ring" unique_id=1890432937]
+layout_mode = 2
+
+[node name="PowerStageLabel" type="Label" parent="Ring/HBoxContainer" unique_id=1367668256]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_d56e8")
+theme_override_font_sizes/font_size = 2
+text = "Basic"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="Ring/HBoxContainer" unique_id=1719066755]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="UsesLabel" type="Label" parent="Ring/HBoxContainer" unique_id=1587826870]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_d56e8")
+theme_override_font_sizes/font_size = 2
+text = "20/20"
+horizontal_alignment = 1
+
+[node name="Empty" type="MarginContainer" parent="." unique_id=400571093]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 1
+
+[node name="Label" type="Label" parent="Empty" unique_id=72405302]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d56e8")
+theme_override_font_sizes/font_size = 4
+text = "Empty"
+horizontal_alignment = 1

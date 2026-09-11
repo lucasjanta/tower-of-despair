@@ -176,7 +176,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"attack",
-"speed": 10.0
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 2.0,
@@ -282,7 +282,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"special_attack",
-"speed": 10.0
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -514,6 +514,8 @@ metadata/_aseprite_wizard_config_ = {
 metadata/_aseprite_wizard_source_file_hash_ = "437ee991fb79f5261d8a07393718d972"
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=580470774]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1661270572]
 position = Vector2(9.5, -2.5)
@@ -522,6 +524,8 @@ disabled = true
 debug_color = Color(0.9811428, 0, 0.37767443, 0.41960785)
 
 [node name="HitboxSpecialAttack" type="Area2D" parent="." unique_id=937418681]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxSpecialAttack" unique_id=576746521]
 position = Vector2(16.5, -5)
@@ -624,4 +628,6 @@ show_percentage = false
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/UseRingState" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/BasicAttackState" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="HitboxSpecialAttack" to="." method="_on_hitbox_special_attack_body_entered"]
 [connection signal="animation_finished" from="special_slash" to="StateMachine/SpecialAttackState" method="_on_special_slash_animation_finished"]

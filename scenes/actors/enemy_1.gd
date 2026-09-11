@@ -10,7 +10,7 @@ extends Enemy
 var hp : float
 var ring_max_cd := 5.0
 var ring_cd := 0.0
-var basic_attack_max_cd := 3.0
+var basic_attack_max_cd := 2.0
 var basic_attack_cd := 0.0
 var special_attack_max_cd := 5.0
 var special_attack_cd := 0.0
@@ -54,3 +54,13 @@ func take_damage(dmg):
 	update_hp()
 	if hp <= 0.0:
 		print("enemy died")
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body is Player:
+		body.take_damage(10)
+
+
+func _on_hitbox_special_attack_body_entered(body: Node2D) -> void:
+	if body is Player:
+		body.take_damage(25)

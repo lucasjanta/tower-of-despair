@@ -5,6 +5,9 @@ var dir : float
 @onready var state_machine: StateMachine = $StateMachine
 @onready var state_label: Label = $Label
 @onready var player_hud: Control = $CanvasLayer/PlayerHUD
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var hit_label: Label = $HitLabel
 
 
 @export var speed : float = 150.0
@@ -42,6 +45,8 @@ func _physics_process(delta: float) -> void:
 		
 func take_damage(dmg):
 	hp -= dmg
+	hit_label.text = str(dmg)
+	animation_player.play("take_dmg")
 	player_hud.update_hp()
 	if hp <= 0.0:
 		print("player died")
